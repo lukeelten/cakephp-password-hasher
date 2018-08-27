@@ -19,6 +19,7 @@ matrix:
     env: PHPCS=1 DEFAULT=0
 
 before_script:
+- if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then rm -f composer.lock; fi
 - composer install --prefer-dist --no-interaction
 - if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then composer require paragonie/sodium_compat; fi
 

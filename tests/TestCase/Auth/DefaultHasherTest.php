@@ -1,19 +1,16 @@
 <?php
+
 namespace lukeelten\PasswordHasherTest\Auth;
 
-use Cake\TestSuite\TestCase;
+use lukeelten\PasswordHasherTest\Util\HasherTestUtil;
 use lukeelten\PasswordHasher\Auth\DefaultHasher;
 
 /**
  * Class RecaptchaComponentTest
  * @author Tobias Derksen <tobias@nulap.com>
  */
-class DefaultHasherTest extends TestCase
+class DefaultHasherTest extends HasherTestUtil
 {
 
-    public function testCreation()
-    {
-        $instance = new DefaultHasher();
-        $this->assertNotNull($instance);
-    }
+    protected static $className = DefaultHasher::class;
 }

@@ -32,7 +32,8 @@ matrix:
 before_script:
 - if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then rm -f composer.lock; fi
 - composer install --prefer-dist --no-interaction
-- if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then pecl install libsodium; composer require paragonie/sodium_compat; fi
+- composer require paragonie/sodium_compat;
+- if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then pecl install libsodium; fi
 
 script:
 - if [[ $PHPCS != 1 ]]; then composer test; fi

@@ -9,7 +9,7 @@ php:
 
 env:
   global:
-  - DEFAULT=1
+  - PHPCS=0
 
 cache:
   directories:
@@ -20,16 +20,15 @@ matrix:
 
   include:
   - php: 7.1
-    env: PHPCS=1 DEFAULT=0
+    env: PHPCS=1
 
 before_script:
 - if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then rm -f composer.lock; fi
 - composer install --prefer-dist --no-interaction
-- if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then composer require paragonie/sodium_compat; fi
+- if [[ $TRAVIS_PHP_VERSION != 7.2 ]]; then pecl install libsodium; composer require paragonie/sodium_compat; fi
 
 script:
-- if [[ $DEFAULT = 1 && $TRAVIS_PHP_VERSION = 7.1 ]]; then export CODECOVERAGE=1; vendor/bin/phpunit --coverage-clover=clover.xml; fi
-- if [[ $DEFAULT = 1 && $TRAVIS_PHP_VERSION != 7.1 ]]; then vendor/bin/phpunit; fi
+- if [[ $PHPCS != 1 ]]; then composer test; fi
 - if [[ $PHPCS = 1 ]]; then composer cs; fi
 
 notifications:

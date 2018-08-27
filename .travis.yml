@@ -5,7 +5,7 @@ sudo: required
 addons:
   apt:
     sources:
-    - sourceline: ppa:chris-lea/libsodium
+    - sourceline: ppa:ondrej/php
     packages:
     - libsodium-dev
 

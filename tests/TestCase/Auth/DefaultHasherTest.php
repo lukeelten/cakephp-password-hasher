@@ -8,9 +8,11 @@ use lukeelten\PasswordHasher\Auth\DefaultHasher;
  * Class RecaptchaComponentTest
  * @author Tobias Derksen <tobias@nulap.com>
  */
-class DefaultHasherTest extends TestCase {
+class DefaultHasherTest extends TestCase
+{
 
-    public function testCreation() {
+    public function testCreation()
+    {
         $instance = new DefaultHasher();
         $this->assertNotNull($instance);
     }

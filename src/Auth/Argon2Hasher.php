@@ -5,7 +5,8 @@ namespace lukeelten\PasswordHasher\Auth;
 use Cake\Auth\AbstractPasswordHasher;
 use ParagonIE_Sodium_Compat;
 
-class Argon2Hasher extends AbstractPasswordHasher {
+class Argon2Hasher extends AbstractPasswordHasher
+{
 
     /**
      * Generates password hash.
@@ -14,7 +15,8 @@ class Argon2Hasher extends AbstractPasswordHasher {
      *   required to generate password hash.
      * @return string Password hash
      */
-    public function hash($password) {
+    public function hash($password)
+    {
         if (defined("PASSWORD_ARGON2I")) {
             return password_hash($password, PASSWORD_ARGON2I);
         }
@@ -46,7 +48,8 @@ class Argon2Hasher extends AbstractPasswordHasher {
      * @param string $hashedPassword Existing hashed password.
      * @return bool True if hashes match else false.
      */
-    public function check($password, $hashedPassword) {
+    public function check($password, $hashedPassword)
+    {
         if (defined("PASSWORD_ARGON2I")) {
             return password_verify($password, $hashedPassword);
         }
@@ -62,8 +65,15 @@ class Argon2Hasher extends AbstractPasswordHasher {
         throw new HasherException("No usuable password hasher found.");
     }
 
-
-    public function needsRehash($password) {
+    /**
+     * Check if password needs rehash.
+     * If the default hash algorithm has changed, this method indicates whether the password needs a rehash.
+     *
+     * @param string $password Password to check
+     * @return bool True if password needs rehash, otherwise false
+     */
+    public function needsRehash($password)
+    {
         if (defined("PASSWORD_ARGON2I")) {
             return password_needs_rehash($password, PASSWORD_ARGON2I);
         }
@@ -82,5 +92,4 @@ class Argon2Hasher extends AbstractPasswordHasher {
 
         throw new HasherException("No usuable password hasher found.");
     }
-
 }

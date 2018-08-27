@@ -30,12 +30,13 @@
     "suggest": {
         "php": ">=7.2",
         "ext-sodium": "*",
-        "paragonie/sodium_compat": "^1.6"
+        "ext-libsodium": "*"
     },
 
     "require": {
         "php": ">=7.0",
-        "cakephp/cakephp": "~3.0"
+        "cakephp/cakephp": "~3.0",
+        "paragonie/sodium_compat": "^1.6"
     },
 
     "require-dev": {

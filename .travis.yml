@@ -11,6 +11,10 @@ env:
   global:
   - DEFAULT=1
 
+cache:
+  directories:
+  - "$HOME/.composer/cache"
+
 matrix:
   fast_finish: true
 

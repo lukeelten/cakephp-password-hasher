@@ -1,6 +1,12 @@
 language: php
 
-sudo: false
+sudo: required
+
+addons:
+  apt:
+    packages:
+    - libsodium
+    - libsodium-dev
 
 php:
 - 7.0

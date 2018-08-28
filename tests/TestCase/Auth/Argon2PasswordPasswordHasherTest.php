@@ -5,6 +5,12 @@ namespace lukeelten\PasswordHasherTest\Auth;
 use lukeelten\PasswordHasher\Auth\Argon2PasswordHasher;
 use lukeelten\PasswordHasher\Auth\BcryptPasswordHasher;
 
+/**
+ * Class Argon2PasswordPasswordHasherTest
+ * @package lukeelten\PasswordHasherTest\Auth
+ *
+ * @author Tobias Derksen <tobias@nulap.com>
+ */
 class Argon2PasswordPasswordHasherTest extends PasswordHasherTestBase
 {
 

@@ -7,6 +7,8 @@ use Cake\Auth\FallbackPasswordHasher;
 /**
  * Class SecurePasswordHasherChain
  * @package lukeelten\PasswordHasher\Auth
+ *
+ * @author Tobias Derksen <tobias@nulap.com>
  */
 class SecurePasswordHasherChain extends FallbackPasswordHasher
 {

@@ -8,6 +8,8 @@ use ParagonIE_Sodium_Compat;
 /**
  * Class Argon2PasswordHasher
  * @package lukeelten\PasswordHasher\Auth
+ *
+ * @author Tobias Derksen <tobias@nulap.com>
  */
 class Argon2PasswordHasher extends AbstractPasswordHasher
 {

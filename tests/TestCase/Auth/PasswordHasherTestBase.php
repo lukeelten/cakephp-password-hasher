@@ -5,6 +5,12 @@ namespace lukeelten\PasswordHasherTest\Auth;
 use Cake\Auth\AbstractPasswordHasher;
 use Cake\TestSuite\TestCase;
 
+/**
+ * Class PasswordHasherTestBase
+ * @package lukeelten\PasswordHasherTest\Auth
+ *
+ * @author Tobias Derksen <tobias@nulap.com>
+ */
 class PasswordHasherTestBase extends TestCase
 {
 

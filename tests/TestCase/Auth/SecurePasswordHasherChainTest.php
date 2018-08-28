@@ -6,6 +6,12 @@ use lukeelten\PasswordHasher\Auth\Argon2PasswordHasher;
 use lukeelten\PasswordHasher\Auth\BcryptPasswordHasher;
 use lukeelten\PasswordHasher\Auth\SecurePasswordHasherChain;
 
+/**
+ * Class SecurePasswordHasherChainTest
+ * @package lukeelten\PasswordHasherTest\Auth
+ *
+ * @author Tobias Derksen <tobias@nulap.com>
+ */
 class SecurePasswordHasherChainTest extends PasswordHasherTestBase
 {
 

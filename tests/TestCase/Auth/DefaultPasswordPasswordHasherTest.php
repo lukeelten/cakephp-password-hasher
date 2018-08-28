@@ -5,7 +5,9 @@ namespace lukeelten\PasswordHasherTest\Auth;
 use lukeelten\PasswordHasher\Auth\DefaultPasswordHasher;
 
 /**
- * Class RecaptchaComponentTest
+ * Class DefaultPasswordPasswordHasherTest
+ * @package lukeelten\PasswordHasherTest\Auth
+ *
  * @author Tobias Derksen <tobias@nulap.com>
  */
 class DefaultPasswordPasswordHasherTest extends PasswordHasherTestBase

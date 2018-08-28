@@ -1,27 +1,41 @@
 <?php
 
-namespace lukeelten\PasswordHasherTest\Util;
+namespace lukeelten\PasswordHasherTest\Auth;
 
 use Cake\Auth\AbstractPasswordHasher;
 use Cake\TestSuite\TestCase;
 
-class HasherTestUtil extends TestCase
+class PasswordHasherTestBase extends TestCase
 {
 
+    /**
+     * @var string Classname of class under test
+     */
     protected static $className;
 
-    public function testInstance()
+    protected function getInstance() : AbstractPasswordHasher
     {
         $instance = new static::$className();
         $this->assertNotNull($instance);
 
+        return $instance;
+    }
+
+    protected function randomPassword($length = 64) : string
+    {
+        return bin2hex(random_bytes($length));
+    }
+
+    public function testInstance()
+    {
+        $instance = $this->getInstance();
         $this->assertInstanceOf(AbstractPasswordHasher::class, $instance);
     }
 
     public function testHash()
     {
-        $password = bin2hex(random_bytes(32));
-        $instance = new static::$className();
+        $password = $this->randomPassword();
+        $instance = $this->getInstance();
 
         $hashed = $instance->hash($password);
         $this->assertNotEmpty($hashed);
@@ -35,18 +49,20 @@ class HasherTestUtil extends TestCase
 
     public function testCheck()
     {
-        $password = bin2hex(random_bytes(32));
-        $instance = new static::$className();
+        $password = $this->randomPassword();
+        $instance = $this->getInstance();
 
         $hashed = $instance->hash($password);
         $this->assertTrue($instance->check($password, $hashed));
         $this->assertFalse($instance->check("abc", $hashed));
+        $this->assertFalse($instance->check($password, "ököajdjhsfliuasnfd"));
+        $this->assertFalse($instance->check("ököajdjhsfliuasnfd", "ököajdjhsfliuasnfd"));
     }
 
     public function testRehash()
     {
-        $password = bin2hex(random_bytes(32));
-        $instance = new static::$className();
+        $password = $this->randomPassword();
+        $instance = $this->getInstance();
 
         $hashed = $instance->hash($password);
         $this->assertFalse($instance->needsRehash($hashed));

@@ -4,7 +4,11 @@ namespace lukeelten\PasswordHasher\Auth;
 
 use Cake\Auth\DefaultPasswordHasher;
 
-class BcryptHasher extends DefaultPasswordHasher
+/**
+ * Class BcryptHasher
+ * @package lukeelten\PasswordHasher\Auth
+ */
+class BcryptPasswordHasher extends DefaultPasswordHasher
 {
 
     protected $_defaultConfig = [

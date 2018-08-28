@@ -2,9 +2,9 @@
 
 namespace lukeelten\PasswordHasher\Auth;
 
-use Cake\Auth\DefaultPasswordHasher;
+use Cake\Auth\DefaultPasswordHasher as CakeDefaultPasswordHasher;
 
-class DefaultHasher extends DefaultPasswordHasher
+class DefaultPasswordHasher extends CakeDefaultPasswordHasher
 {
 
     protected $_defaultConfig = [

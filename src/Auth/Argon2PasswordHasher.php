@@ -5,7 +5,11 @@ namespace lukeelten\PasswordHasher\Auth;
 use Cake\Auth\AbstractPasswordHasher;
 use ParagonIE_Sodium_Compat;
 
-class Argon2Hasher extends AbstractPasswordHasher
+/**
+ * Class Argon2PasswordHasher
+ * @package lukeelten\PasswordHasher\Auth
+ */
+class Argon2PasswordHasher extends AbstractPasswordHasher
 {
 
     /**
@@ -37,7 +41,7 @@ class Argon2Hasher extends AbstractPasswordHasher
             );
         }
 
-        throw new HasherException("No usuable password hasher found.");
+        throw new PasswordHasherException("No usuable password hasher found.");
     }
 
     /**
@@ -62,7 +66,7 @@ class Argon2Hasher extends AbstractPasswordHasher
             return ParagonIE_Sodium_Compat::crypto_pwhash_str_verify($hashedPassword, $password);
         }
 
-        throw new HasherException("No usuable password hasher found.");
+        throw new PasswordHasherException("No usuable password hasher found.");
     }
 
     /**
@@ -90,6 +94,6 @@ class Argon2Hasher extends AbstractPasswordHasher
             return false; // compat lib is installed. ignore request
         }
 
-        throw new HasherException("No usuable password hasher found.");
+        throw new PasswordHasherException("No usuable password hasher found.");
     }
 }

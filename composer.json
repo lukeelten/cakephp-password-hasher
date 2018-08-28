@@ -1,8 +1,17 @@
 {
     "name": "lukeelten/cakephp-password-hasher",
     "description": "A set of password hasher for CakePHP 3",
-    "type": "library",
+    "type": "cakephp-plugin",
     "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "keywords": [
+      "cakephp",
+      "passwords",
+      "hash",
+      "argon2i",
+      "sodium"
+    ],
     "authors": [
         {
             "name": "Tobias Derksen",

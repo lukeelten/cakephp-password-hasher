@@ -46,3 +46,7 @@ class User extends Entity
     }
 }
 ```
+
+## Troubleshooting
+
+If you have problems installing the composer dependencies, delete the "composer.lock" file. It has been generated using PHP 7.2 and may not be suitable for other PHP versions.

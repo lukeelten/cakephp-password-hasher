@@ -28,6 +28,7 @@ class SecurePasswordHasherChainTest extends PasswordHasherTestBase
 
         $hash = $instance->hash($password);
         $this->assertTrue($instance->check($password, $hash));
+        $this->assertFalse($instance->needsRehash($hash));
 
         // Password should have been hashed with argon2
         $this->assertTrue($argonHasher->check($password, $hash));
@@ -41,5 +42,6 @@ class SecurePasswordHasherChainTest extends PasswordHasherTestBase
         // Hash with Bcrypt and check with chain
         $hash = $bcryptHasher->hash($password);
         $this->assertTrue($instance->check($password, $hash));
+        $this->assertTrue($instance->needsRehash($hash));
     }
 }

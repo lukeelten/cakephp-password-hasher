@@ -10,7 +10,10 @@
       "passwords",
       "hash",
       "argon2i",
-      "sodium"
+      "sodium",
+      "php",
+      "hashing",
+      "security"
     ],
     "authors": [
         {

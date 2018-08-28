@@ -10,7 +10,7 @@ use lukeelten\PasswordHasher\Auth\DefaultPasswordHasher;
  *
  * @author Tobias Derksen <tobias@nulap.com>
  */
-class DefaultPasswordPasswordHasherTest extends PasswordHasherTestBase
+class DefaultPasswordHasherTest extends PasswordHasherTestBase
 {
 
     protected static $className = DefaultPasswordHasher::class;

@@ -11,7 +11,7 @@ use lukeelten\PasswordHasher\Auth\BcryptPasswordHasher;
  *
  * @author Tobias Derksen <tobias@nulap.com>
  */
-class Argon2PasswordPasswordHasherTest extends PasswordHasherTestBase
+class Argon2PasswordHasherTest extends PasswordHasherTestBase
 {
 
     protected static $className = Argon2PasswordHasher::class;

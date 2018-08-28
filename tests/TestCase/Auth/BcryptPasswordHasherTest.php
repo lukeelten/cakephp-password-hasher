@@ -11,7 +11,7 @@ use lukeelten\PasswordHasher\Auth\BcryptPasswordHasher;
  *
  * @author Tobias Derksen <tobias@nulap.com>
  */
-class BcryptPasswordPasswordHasherTest extends PasswordHasherTestBase
+class BcryptPasswordHasherTest extends PasswordHasherTestBase
 {
 
     protected static $className = BcryptPasswordHasher::class;

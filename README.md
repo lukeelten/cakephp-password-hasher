@@ -21,6 +21,13 @@ __Important:__ If you run PHP 7.2 on Alpine Linux, please install the __sodium__
 Please install the __libsodium__ extension, either via PECL or via package manager.
 
 
+## Installation
+
+Install via composer. There is no need for plugin loading or special configuration. Just use the project as described below.
+```bash
+composer require lukeelten/cakephp-password-hasher
+```
+
 ## Usage
 
 You can use the Argon2PasswordHasher with the default Auth plugin as seen below.

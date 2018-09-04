@@ -124,7 +124,6 @@ class Argon2PasswordHasher extends AbstractPasswordHasher
             } catch (\Exception $ex) {
                 throw new PasswordHasherException("Error while checking password for rehash", $ex->getCode(), $ex);
             }
-
         }
 
         if (class_exists("ParagonIE_Sodium_Compat")) {

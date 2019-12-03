@@ -19,7 +19,7 @@ class PasswordHasherTestBase extends TestCase
      */
     protected static $className;
 
-    protected function getInstance() : AbstractPasswordHasher
+    protected function getInstance(): AbstractPasswordHasher
     {
         $instance = new static::$className();
         $this->assertNotNull($instance);
@@ -27,7 +27,7 @@ class PasswordHasherTestBase extends TestCase
         return $instance;
     }
 
-    protected function randomPassword($length = 64) : string
+    protected function randomPassword($length = 64): string
     {
         return bin2hex(random_bytes($length));
     }
